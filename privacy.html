@@ -1,0 +1,427 @@
+<title>Trading Signals Privacy Policy</title>
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --surface: #ffffff;
+    --surface-raised: #ffffff;
+    --text: #171a21;
+    --muted: #5b6472;
+    --faint: #8991a0;
+    --border: #e1e4ea;
+    --accent: #2f5fe0;
+    --accent-ink: #ffffff;
+    --accent-soft: #e7ecfc;
+    --code-bg: #eef1f6;
+    --shadow: 0 1px 2px rgba(23, 26, 33, 0.04), 0 8px 24px rgba(23, 26, 33, 0.05);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0d1117;
+      --surface: #151a21;
+      --surface-raised: #191f27;
+      --text: #e7eaef;
+      --muted: #939bab;
+      --faint: #6b7282;
+      --border: #262c36;
+      --accent: #86a4ff;
+      --accent-ink: #0d1117;
+      --accent-soft: rgba(134, 164, 255, 0.14);
+      --code-bg: #1c222b;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 28px rgba(0, 0, 0, 0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d1117;
+    --surface: #151a21;
+    --surface-raised: #191f27;
+    --text: #e7eaef;
+    --muted: #939bab;
+    --faint: #6b7282;
+    --border: #262c36;
+    --accent: #86a4ff;
+    --accent-ink: #0d1117;
+    --accent-soft: rgba(134, 164, 255, 0.14);
+    --code-bg: #1c222b;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 28px rgba(0, 0, 0, 0.35);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    padding: 0 20px 96px;
+  }
+
+  .display {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+    text-wrap: balance;
+  }
+
+  .mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.01em;
+  }
+
+  a { color: var(--accent); text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent); text-underline-offset: 2px; }
+  a:hover { text-decoration-color: var(--accent); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+  .page {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  header.hero {
+    padding: 64px 0 32px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+  }
+
+  h1.display {
+    font-size: clamp(32px, 5vw, 44px);
+    font-weight: 600;
+    line-height: 1.12;
+    margin: 0 0 14px;
+    letter-spacing: -0.01em;
+  }
+
+  .dek {
+    color: var(--muted);
+    font-size: 17px;
+    max-width: 56ch;
+    margin: 0 0 22px;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    font-size: 13px;
+    color: var(--faint);
+  }
+  .meta-row .mono { color: var(--muted); }
+
+  nav.toc {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    margin: 0 -20px 40px;
+    padding: 0 20px;
+  }
+  .toc-scroll {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 14px 0;
+    scrollbar-width: none;
+  }
+  .toc-scroll::-webkit-scrollbar { display: none; }
+  .toc-scroll a {
+    flex: 0 0 auto;
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 7px 13px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    white-space: nowrap;
+    transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  }
+  .toc-scroll a:hover { color: var(--text); border-color: var(--faint); }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+  }
+
+  section { scroll-margin-top: 76px; }
+
+  .section-num {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  h2.display {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 14px;
+    letter-spacing: -0.005em;
+  }
+
+  section p, section li {
+    color: var(--text);
+    max-width: 66ch;
+  }
+  section p { margin: 0 0 14px; }
+  section p:last-child { margin-bottom: 0; }
+  section p.lead-muted { color: var(--muted); }
+
+  ul.plain, ol.plain {
+    margin: 0 0 14px;
+    padding-left: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  ul.plain:last-child, ol.plain:last-child { margin-bottom: 0; }
+
+  .data-grid {
+    display: grid;
+    gap: 12px;
+    margin-top: 6px;
+  }
+  .data-card {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 12px;
+    padding: 16px 18px;
+    box-shadow: var(--shadow);
+  }
+  .data-card h3 {
+    margin: 0 0 6px;
+    font-size: 14.5px;
+    font-weight: 600;
+  }
+  .data-card p {
+    margin: 0;
+    font-size: 14.5px;
+    color: var(--muted);
+  }
+  .data-card .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 6px;
+    padding: 2px 8px;
+    margin-bottom: 8px;
+  }
+
+  .callout {
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    background: var(--surface);
+    border-radius: 8px;
+    padding: 16px 18px;
+    font-size: 14.5px;
+    color: var(--muted);
+  }
+  .callout strong { color: var(--text); }
+
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    background: var(--code-bg);
+    padding: 2px 6px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    color: var(--text);
+  }
+
+  .contact-card {
+    border: 1px solid var(--border);
+    background: var(--surface-raised);
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .contact-card .label { font-size: 12.5px; color: var(--faint); text-transform: uppercase; letter-spacing: 0.06em; }
+  .contact-card .value { font-size: 17px; font-weight: 600; }
+  .fill-me {
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 1px 8px;
+    border-radius: 6px;
+    font-size: 0.85em;
+  }
+
+  footer.page-footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--faint);
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  @media (max-width: 520px) {
+    body { padding: 0 16px 72px; }
+    header.hero { padding: 44px 0 26px; }
+    nav.toc { margin: 0 -16px 32px; padding: 0 16px; }
+  }
+</style>
+
+<div class="page">
+  <header class="hero">
+    <span class="eyebrow">Trading Signals</span>
+    <h1 class="display">Privacy Policy</h1>
+    <p class="dek">The app sends XAUUSD trading signals to your phone over WebSocket and push notification. This document explains what we collect, why, and what you control.</p>
+    <div class="meta-row">
+      <span>Effective <span class="mono">August 16, 2026</span></span>
+      <span>Applies to the Android app <span class="mono">com.vinhnt.tradingsignals</span></span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Table of contents">
+    <div class="toc-scroll">
+      <a href="#data-collected">Data we collect</a>
+      <a href="#purpose">Purpose</a>
+      <a href="#sharing">Sharing</a>
+      <a href="#storage">Storage &amp; security</a>
+      <a href="#rights">Your rights</a>
+      <a href="#age">Age</a>
+      <a href="#disclaimer">Disclaimer</a>
+      <a href="#changes">Changes</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="intro">
+      <p class="lead-muted">Trading Signals ("the app", "we") is built and run by an independent developer, not a financial firm or brokerage. The app forwards trade signals produced by an automated trading strategy and never places a trade on your behalf — you always make the final call.</p>
+    </section>
+
+    <section id="data-collected">
+      <span class="section-num">01</span>
+      <h2 class="display">Data we collect</h2>
+      <p>Three categories, nothing more:</p>
+      <div class="data-grid">
+        <div class="data-card">
+          <span class="tag">Automatic</span>
+          <h3>Device identifiers</h3>
+          <p>A random device ID and a device token issued by our server specifically for your phone on first install, plus a Firebase Cloud Messaging token for push delivery. Not your phone number, not an IMEI, not your contacts or GPS location.</p>
+        </div>
+        <div class="data-card">
+          <span class="tag">You provide it</span>
+          <h3>Email and MT5 account number (optional)</h3>
+          <p>Only if you submit a verification request on the Referral tab to unlock full price targets — used to manually cross-check your account against the broker's partner system, for no other purpose.</p>
+        </div>
+        <div class="data-card">
+          <span class="tag">Automatic</span>
+          <h3>App usage data</h3>
+          <p>Firebase Analytics records general usage metrics (app opens, which screens get viewed, device/OS version, crash reports) so we know what's working. Not tied to your name or email.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="purpose">
+      <span class="section-num">02</span>
+      <h2 class="display">What we use this data for</h2>
+      <ul class="plain">
+        <li><strong>Delivering signals to your specific device</strong> — over the open WebSocket connection, and via push notification when the app is backgrounded.</li>
+        <li><strong>Telling devices apart and protecting each one individually</strong> — every device holds its own credential, so if one is compromised or abused we can lock out that exact device without touching anyone else.</li>
+        <li><strong>Verifying and managing your unlock tier</strong> — cross-checking the MT5 account you provide against the broker's partner program, and tracking which unlock code is bound to which device.</li>
+        <li><strong>Improving the app</strong> — understanding which features get used, catching bugs through aggregated Analytics data.</li>
+      </ul>
+    </section>
+
+    <section id="sharing">
+      <span class="section-num">03</span>
+      <h2 class="display">Sharing with third parties</h2>
+      <p>We <strong>never sell</strong> your data to anyone, in any form.</p>
+      <p>Two parties can see part of it:</p>
+      <ul class="plain">
+        <li><strong>Google / Firebase</strong> — runs the push notification (FCM) and usage-analytics (Analytics) infrastructure. Google handles this data under its own <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">privacy policy</a>.</li>
+        <li><strong>The broker's partner program</strong> — the email and MT5 account number you submit (if any) are only cross-checked by hand in the partner dashboard to confirm eligibility, never sent through any automated API.</li>
+      </ul>
+    </section>
+
+    <section id="storage">
+      <span class="section-num">04</span>
+      <h2 class="display">Storage &amp; security</h2>
+      <p>Data lives on a server we operate directly, with no intermediary in between. Some specific protections:</p>
+      <ul class="plain">
+        <li>Device credentials are stored server-side only as a <span class="mono">hash</span> — the server itself can't read the original value back out.</li>
+        <li>The credential kept on your phone lives in Android's encrypted storage (<span class="mono">EncryptedSharedPreferences</span>), never as plain text.</li>
+        <li>Every connection between the app and the server runs over <span class="mono">HTTPS/WSS</span>.</li>
+      </ul>
+      <p>Data is retained for as long as the device/account stays active, or until you request deletion (see Your rights below).</p>
+    </section>
+
+    <section id="rights">
+      <span class="section-num">05</span>
+      <h2 class="display">Your rights</h2>
+      <p>You can ask us to <strong>view</strong>, <strong>correct</strong>, or <strong>delete</strong> all data tied to your device at any time — reach out using the contact details at the bottom of this page. Uninstalling the app does not automatically delete server-side data; message us if you want it removed entirely.</p>
+    </section>
+
+    <section id="age">
+      <span class="section-num">06</span>
+      <h2 class="display">Age requirement</h2>
+      <p>The app deals with financial trading, which carries risk, and isn't intended for anyone under 18. We do not knowingly collect data from children.</p>
+    </section>
+
+    <section id="disclaimer">
+      <span class="section-num">07</span>
+      <h2 class="display">Financial disclaimer</h2>
+      <div class="callout">
+        <strong>Signals in this app are for informational purposes only</strong> — not investment advice or a personalized financial recommendation. Forex/gold trading carries a risk of loss. Every trading decision is yours alone.
+      </div>
+    </section>
+
+    <section id="changes">
+      <span class="section-num">08</span>
+      <h2 class="display">Changes to this policy</h2>
+      <p>If this policy changes, the update will be posted at this same address with a new effective date at the top. Material changes will also be announced in the app.</p>
+    </section>
+
+    <section id="contact">
+      <span class="section-num">09</span>
+      <h2 class="display">Contact</h2>
+      <p class="lead-muted">Questions about privacy, or a request to view/delete your data:</p>
+      <div class="contact-card">
+        <span class="label">Developer contact — Telegram</span>
+        <span class="value"><a href="https://t.me/naputen" target="_blank" rel="noopener">@naputen</a></span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <span>Trading Signals</span>
+    <span class="mono">v1 — August 16, 2026</span>
+  </footer>
+</div>
