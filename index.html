@@ -1,0 +1,149 @@
+<title>Trading Signals</title>
+<style>
+  :root {
+    --bg: #0a0d12;
+    --surface: #12161d;
+    --surface-raised: #1b212b;
+    --well: rgba(0,0,0,0.2);
+    --text: #e8eaed;
+    --muted: #8a93a2;
+    --faint: #5c6675;
+    --border: #232a35;
+    --gold: #c6a24d;
+    --gold-dim: #6b5628;
+    --gold-soft: rgba(198,162,77,0.1);
+    --mint: #34d399;
+    --coral: #fb6b6b;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+  }
+
+  .display { font-family: Georgia, "Iowan Old Style", "Times New Roman", serif; text-wrap: balance; }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
+
+  a { color: inherit; text-decoration: none; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 3px; }
+
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- nav ---------- */
+  nav.top {
+    position: sticky; top: 0; z-index: 20;
+    background: color-mix(in srgb, var(--bg) 85%, transparent);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-family: Georgia, serif; font-weight: 700; font-size: 19px; letter-spacing: 0.01em; }
+  .brand svg { width: 30px; height: 30px; flex-shrink: 0; }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 12px 22px; border-radius: 8px; font-size: 15px; font-weight: 600;
+    border: 1px solid transparent; cursor: pointer; transition: transform 0.12s ease, opacity 0.12s ease;
+    white-space: nowrap;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-gold { background: var(--gold); color: #14100a; }
+  .btn-gold:hover { opacity: 0.92; }
+  .btn-ghost { background: transparent; color: var(--text); border-color: var(--border); }
+  .btn-ghost:hover { border-color: var(--gold-dim); }
+  .btn-sm { padding: 9px 16px; font-size: 13.5px; }
+
+  /* ---------- hero ---------- */
+  header.hero { padding: 76px 0 90px; position: relative; overflow: hidden; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600;
+    letter-spacing: 0.09em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
+  }
+  .eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px var(--gold-soft); }
+  h1.display { font-size: clamp(36px, 4.6vw, 54px); line-height: 1.08; margin: 0 0 22px; letter-spacing: -0.01em; }
+  h1.display em { color: var(--gold); font-style: normal; }
+  .hero-sub { font-size: 18px; color: var(--muted); max-width: 46ch; margin: 0 0 34px; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 22px; }
+  .hero-note { font-size: 13.5px; color: var(--faint); }
+  .hero-note strong { color: var(--muted); }
+
+  /* ---------- mock signal card ---------- */
+  .phone-frame {
+    background: linear-gradient(160deg, var(--surface) 0%, var(--bg) 100%);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 22px;
+    box-shadow: 0 30px 70px -20px rgba(0,0,0,0.6);
+  }
+  .phone-frame .tab { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center; }
+  .live-dot { display: inline-flex; align-items: center; gap: 6px; color: var(--mint); font-weight: 600; }
+  .live-dot::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--mint); box-shadow: 0 0 0 3px rgba(52,211,153,0.18); }
+
+  .sig-card { display: flex; border-radius: 10px; overflow: hidden; background: var(--surface-raised); }
+  .sig-rail { width: 3px; flex-shrink: 0; }
+  .sig-rail.buy { background: var(--mint); }
+  .sig-body { flex: 1; padding: 15px 17px 14px; }
+  .sig-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 13px; }
+  .sig-symbol { font-size: 16px; font-weight: 600; }
+  .sig-badge { display: inline-flex; align-items: center; gap: 5px; padding: 5px 10px; border-radius: 6px; font-size: 12px; font-weight: 700; letter-spacing: 0.02em; background: rgba(52,211,153,0.12); color: var(--mint); }
+
+  .ledger { background: var(--well); border-radius: 8px; padding: 11px 13px; }
+  .price-row { display: flex; justify-content: space-between; align-items: center; padding: 4px 0; }
+  .price-row .lbl { font-size: 11.5px; letter-spacing: 0.05em; color: var(--faint); }
+  .price-row .val { font-size: 15px; }
+
+  .sig-meta { display: flex; justify-content: space-between; margin-top: 12px; font-size: 12px; color: var(--faint); }
+  .sig-note { font-size: 13px; color: var(--muted); margin-top: 10px; }
+  .sig-time { font-size: 11.5px; color: var(--faint); margin-top: 10px; }
+
+  .push-toast {
+    margin-top: 16px; background: #14181f; border: 1px solid var(--border); border-radius: 12px;
+    padding: 12px 14px; display: flex; gap: 10px; align-items: flex-start;
+  }
+  .push-toast .icon { width: 22px; height: 22px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+  .push-toast .body { font-size: 12.5px; color: var(--muted); }
+  .push-toast .body b { color: var(--text); display: block; font-size: 13px; margin-bottom: 2px; }
+
+  /* ---------- trust strip ---------- */
+  .trust { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 26px 0; }
+  .trust .wrap { display: flex; flex-wrap: wrap; gap: 28px; justify-content: space-between; }
+  .trust-item { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); flex: 1; min-width: 220px; }
+  .trust-item .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+  .trust-item strong { color: var(--text); }
+
+  /* ---------- sections ---------- */
+  section { padding: 86px 0; }
+  .section-head { max-width: 60ch; margin-bottom: 48px; }
+  .section-num { font-family: ui-monospace, monospace; font-size: 13px; color: var(--gold); font-weight: 600; display: block; margin-bottom: 10px; }
+  h2.display { font-size: clamp(26px, 3vw, 34px); margin: 0 0 12px; letter-spacing: -0.005em; }
+  .section-dek { color: var(--muted); font-size: 16px; margin: 0; }
+
+  /* how it works */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .step { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 26px 24px; }
+  .step-num { font-family: Georgia, serif; font-size: 34px; color: var(--gold-dim); margin-bottom: 14px; }
+  .step h3 { font-size: 17px; margin: 0 0 8px; }
+  .step p { font-size: 14.5px; color: var(--muted); margin: 0; }
+
+  /* tiers */
+  .tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .tier { border-radius: 16px; padding: 30px 28px; border: 1px solid var(--border); }
+  .tier.free { background: var(--surface); }
+  .tier.pro { background: linear-gradient(165deg, var(--surface-raised), var(--surface)); border-color: var(--gold-dim); position: relative; }
+  .tier-badge { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); margin-bottom: 6px; }
+  .tier.pro .tier-badge { color: var(--gold); }
+  .tier h3 { font-size: 22px; margin: 4px 0 18px; font-family: Georgia, serif; }
+  .tier ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  .tier li { display: flex; gap: 10px; font-size: 14.5px; color: var(--muted); align-items: flex-start; }
+  .tier li .check { color: var(--mint); flex-shrink: 0; margin-top: 1px; }
+  .tier.pro li .check { color: var(--gold); }
+  .tier li.locked { color: var(--faint); }
+  .tier li.locked .check { color: var(--gold-dim); }
